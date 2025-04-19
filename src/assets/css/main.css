@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type='file']::file-selector-button {
+    background-color: rgb(2 132 199);
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.swal2-actions button{
+    color: #fff;
+    min-width: 70px;
+}
+
+@keyframes slideMoveDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideMoveLeft {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideMoveUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
