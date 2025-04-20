@@ -2,16 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 //Frontend
 import FrontLayout from '@/app/views/frontend/layout/FrontLayout.vue'
-import Articles from '@/app/views/frontend/pages/Articles.vue'
 import Home from '@/app/views/frontend/pages/Home.vue'
 import FrontLogin from '@/app/views/frontend/pages/Login.vue'
-import Purpose from '@/app/views/frontend/pages/Purpose.vue'
-import Trainings from '@/app/views/frontend/pages/Trainings.vue'
-import Instructors from '@/app/views/frontend/pages/Instructors.vue'
-import UserDetail from '@/app/views/frontend/pages/UserDetail.vue'
-import ArticleDetail from '@/app/views/frontend/pages/ArticleDetail.vue'
-import AuthorApplication from '@/app/views/frontend/pages/AuthorApplication.vue'
-import InstructorApplication from '@/app/views/frontend/pages/InstructorApplication.vue'
 
 
 import UserLayout from '@/app/views/frontend/pages/user/layout/UserLayout.vue'
@@ -45,53 +37,12 @@ const routes = [
         path:'/',
         name:"FrontLayout",
         component:FrontLayout,
-        redirect:'/home',
         children:[
             {
-                path:'/home',
+                path:'/',
                 name: "Home",
                 component:Home,
             },
-            {
-                path:'/purpose',
-                name: "Purpose",
-                component:Purpose,
-            },
-            {
-              path:'/instructors',
-              name: "Instructors",
-              component:Instructors,
-          },
-            {
-                path:'/trainings',
-                name: "Trainings",
-                component:Trainings,
-            },
-            {
-                path:'/articles',
-                name: "Articles",
-                component:Articles,
-            }, 
-            {
-              path:'/user-detail',
-              name: "UserDetail",
-              component:UserDetail,
-            }, 
-            {
-              path:'/article-detail',
-              name: "ArticleDetail",
-              component:ArticleDetail,
-            },
-            {
-              path:'/author-application',
-              name: "AuthorApplication",
-              component:AuthorApplication,
-            }, 
-            {
-              path:'/instructor-application',
-              name: "InstructorApplication",
-              component:InstructorApplication,
-            }, 
             {
                 path:'/login',
                 name: "FrontLogin",
@@ -184,7 +135,7 @@ const router = createRouter({
     if (to.hash) {
       return {
         el:to.hash,
-        top: 105 
+        top: 90 
       };
     } else if (savedPosition) {
       return savedPosition;

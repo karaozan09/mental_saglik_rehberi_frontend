@@ -1,55 +1,31 @@
 <template>
     <header class="flex justify-between items-center  px-6 md:px-12 2xl:px-20 3xl:px-28 py-6 w-full shadow bg-white small-screen" :class="{ 'shadow-none absolute z-10 bg-transparent' : isHome}">
         <router-link :to="{name:'Home'}" :class="{ 'text-white' : isHome}" class="logo text-2xl tracking-widest font-medium">
-          <h1>Coding Adventure</h1>
+          <img src="@/assets/img/logo2.png" class="w-20 h-20" alt="">
         </router-link>
-        <ul class="nav__menu flex items-center gap-8 5xl:gap-16 3xl:text-[1.15rem] 4xl:text-xl  5xl:text-2xl tracking-wider font-medium text-gray-700 flex" :class="{ 'text-white' : isHome}">
+        <ul class="nav__menu flex items-center gap-8 5xl:gap-16 3xl:text-[1.15rem] 4xl:text-xl  5xl:text-2xl tracking-wider font-medium text-gray-700 flex" :class="{ '!text-white' : isHome}">
           <li class="hover:scale-105 transition duration-200">
-            <router-link :to="{name:'Home'}" :class="{ '!text-[#c7d8f1]' : isHome}" class="w-full inline-block">Anasayfa</router-link>
+            <router-link :to="{ name: 'Home', hash:'#home' }" class="tracking-widest">Anasayfa</router-link>
           </li>
           <li class="hover:scale-105 transition duration-200">
-            <router-link :to="{name:'Purpose'}" class="w-full inline-block">Amacımız</router-link>
+            <router-link :to="{ name: 'Home', hash:'#aim' }" class="tracking-widest">Hedefimiz</router-link>
           </li>
           <li class="hover:scale-105 transition duration-200">
-            <router-link :to="{name:'Instructors'}" class="w-full inline-block">Eğitmenler</router-link>
+            <router-link :to="{ name: 'Home', hash:'#period' }" class="tracking-widest">Süreç</router-link>
           </li>
           <li class="hover:scale-105 transition duration-200">
-            <router-link :to="{name:'Trainings'}" class="w-full inline-block">Eğitimler</router-link>
+            <router-link :to="{ name: 'Home', hash:'#team' }" class="tracking-widest">Ekip</router-link>
           </li>
           <li class="hover:scale-105 transition duration-200">
-            <router-link :to="{name:'Articles'}" class="w-full inline-block">Makaleler</router-link>
+            <router-link :to="{ name: 'Home', hash:'#contact' }" class="tracking-widest">İletişim</router-link>
           </li>
           <li class="hover:scale-105 transition duration-200">
-            <router-link :to="{name:'FrontLogin'}" class="w-full inline-block">Giriş</router-link>
-          </li>
-          <li>
-            <v-menu open-on-hover>
-              <template v-slot:activator="{ props }">
-                <v-btn
-                  class="inline-bloc capitalize w-full h-full text-[.9rem] tracking-widest py-1.5 px-5 bg-green-500 shadow text-white rounded"
-                  v-bind="props"
-                >
-                  İçerik Üret
-                </v-btn>
-              </template>
-              <v-list class="mt-[1px]">
-                 <router-link :to="{name:'InstructorApplication'}" class="block w-full font-medium hover:bg-gray-100">
-                  <v-list-item class="border-b">
-                    <v-list-item-title class="tracking-wider text-[.8rem] text-gray-700">EĞİTMEN OL</v-list-item-title>
-                  </v-list-item>
-                 </router-link>
-                  <router-link :to="{name:'AuthorApplication'}" class="block w-full font-medium hover:bg-gray-100">
-                    <v-list-item class="">
-                      <v-list-item-title class="tracking-wider text-[.8rem] text-gray-700">YAZAR OL</v-list-item-title>
-                    </v-list-item>
-                  </router-link>
-              </v-list>
-            </v-menu>
+              <router-link :to="{ name: 'FrontLogin' }" class="py-2 px-7 border border-stone-200 tracking-widest shadow text-[1.2rem] 3xl:text-[1.2rem] !capitalize items-center font-medium !text-green-700 !bg-stone-100 outline-0 rounded">Giriş</router-link>
           </li>
       </ul>
 
     
-      <label id="btn_burger" class="hamburger lg:hidden">
+      <label id="btn_burger" class="hamburger xl:hidden">
           <input type="checkbox">
           <svg @click="showMobileMenu" viewBox="0 0 32 32">
               <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
@@ -116,6 +92,7 @@ header{
   top: 0;
   z-index: 10;
 }
+
 header.sticky {
     position: fixed !important;
     background-color: #fff !important;
@@ -133,10 +110,6 @@ header.sticky .router-link-active{
 }
 .sidebar__img-container {
   border: 8px solid #E8E8E8;
-}
-.router-link-active{
-  color: #3F78E0 ;
-  letter-spacing: 2px;
 }
 .router-link-active a {
   font-size: 1.5rem;
@@ -245,6 +218,21 @@ header.sticky .router-link-active{
       header.small-screen .active-language{
         color: #3F78E0 !important;
       }
+
+       @keyframes pulse-glow {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #007bff;
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff;
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #007bff;
+      }
+    }
       
   }
 

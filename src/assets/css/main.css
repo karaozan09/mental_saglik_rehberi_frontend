@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
 input[type='file']::file-selector-button {
     background-color: rgb(2 132 199);
     color: white;
