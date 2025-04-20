@@ -1,5 +1,9 @@
 # Psikolojik_Mental_Saglik_Rehberi_NURİ
 Türk kültürüne uygun, doğru Türkçe konuşan, destekleyici ve güvenilir bir yapay zekâ mental sağlık rehberi.Bir mental sağlık rehberi olan Nora'nın Türkçeye uyarlanmış versiyonu. Bu projede Bilişsel Davranışçı Terapi yöntemini yapay zekaya öğreterek kullanıcıyı doğru yönlendirme ve yardımcı olmak hedeflenmiştir. (Bilişsel Davranışçı Terapi) CBT; insanların düşünce–duygu–davranış bağlantısını fark edip, zararlı düşünce kalıplarını değiştirmesine yardımcı olan bir terapi yöntemidir. “Olumsuz düşüncelerini tanı, sorgula ve dönüştür.”
+# Trello Hesabımız ;
+
+https://trello.com/b/fG3yBMS0/guncel-konular
+
 # SWOT Analizi
 # Strengths
 
@@ -39,6 +43,3 @@ Sağlık verisi gizliliği konusunda yasal zorluklar
 # USE CASE Diyagramı
 
 <img width="535" alt="UseCase" src="https://github.com/user-attachments/assets/00b22d45-8217-445b-ba72-226fb6e14d96" />
-
-
-
