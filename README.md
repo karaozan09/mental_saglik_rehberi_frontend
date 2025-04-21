@@ -4,6 +4,10 @@ Türk kültürüne uygun, doğru Türkçe konuşan, destekleyici ve güvenilir b
 
 https://trello.com/b/fG3yBMS0/guncel-konular
 
+# Web Sitesi;
+https://psikolog-ayda.github.io/
+
+
 # SWOT Analizi
 # Strengths
 
