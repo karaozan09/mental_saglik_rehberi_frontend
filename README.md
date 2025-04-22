@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 # SWOT Analizi
-# Strengths
+## Strengths
 
 Ruh sağlığına olan ilgi artıyor
 
@@ -28,19 +28,19 @@ Nora vb. uygulamalarda Türkçe dil desteğinin ve Türk kültürüne uygun yön
 
 Bilişisel Davranışçı Terapi hakkında yardım alabileceğimiz uzmanlarla iletişim
 
-# Weaknesses
+## Weaknesses
 
 Yapay zekâ etik ve gizlilik sorumlulukları
 
 Psikolojik destek içeriğinin doğru çevrilmesi
 
-# Opportunities
+## Opportunities
 
 Türkçe dilde psikoeğitim eksik
 
 Türkiye vatandaşlarının gelenekesel yöntemlerden ziyade profesyonel destek almaya olan ilginin artması
 
-# Threats
+## Threats
 
 Diğer büyük platformlarla rekabet
 
