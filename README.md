@@ -10,6 +10,13 @@ https://psikolog-ayda.github.io/
 # Tanıtım Videosu;
 Youtube link: https://www.youtube.com/watch?v=mu1w6on8IfY
 
+# Kurulum
+Projeyi klonladıktan veya indirdikten sonra aşağıdaki komutları terminalde çalıştırarak projeyi başlatabilirsiniz:
+
+```bash
+npm install
+npm run dev
+```
 # SWOT Analizi
 # Strengths
 
