@@ -51,8 +51,8 @@ Sağlık verisi gizliliği konusunda yasal zorluklar
 
 # UML Sınıf Diyagramı
 
-<img width="364" alt="UML Sınıf Diyagramı pngv2" src="https://github.com/user-attachments/assets/701e930d-9c32-4359-908a-781f14a08bd1" />
+<img width="364" alt="UML Sınıf Diyagramı pngv2" src="https://github.com/user-attachments/assets/1aa04610-4123-4a3b-ad71-621bdac0700e" />
 
 # USE CASE Diyagramı
 
-<img width="535" alt="UseCase" src="https://github.com/user-attachments/assets/00b22d45-8217-445b-ba72-226fb6e14d96" />
+<img width="535" alt="UseCase" src="https://github.com/user-attachments/assets/6174066e-6fa2-49f9-bc25-f75487244f4c" />
