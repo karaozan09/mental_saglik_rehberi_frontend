@@ -154,7 +154,19 @@ setup(){
     }
 
     onMounted(() => {
+<<<<<<< HEAD
      
+=======
+      Swal.fire({
+          position: "center",
+          icon: "info",
+          title:"😎",
+          html:"<div><span class='font-bold text-red-400'>Giriş</span> ve <span class='font-bold text-red-400'>Kayıt Ol</span> işlemleri en kısa sürede aktif olacaktır.</div>",
+          showConfirmButton: true,
+          confirmButtonText: "Tamam",
+          confirmButtonColor: "#3085d6", 
+      });
+>>>>>>> refs/remotes/origin/main
     })
     
     return{

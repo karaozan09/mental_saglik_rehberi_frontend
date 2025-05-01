@@ -1,15 +1,24 @@
 # Psikolojik_Mental_Saglik_Rehberi_Ayda
 Türk kültürüne uygun, doğru Türkçe konuşan, destekleyici ve güvenilir bir yapay zekâ mental sağlık rehberi.Bir mental sağlık rehberi olan Nora'nın Türkçeye uyarlanmış versiyonu. Bu projede Bilişsel Davranışçı Terapi yöntemini yapay zekaya öğreterek kullanıcıyı doğru yönlendirme ve yardımcı olmak hedeflenmiştir. (Bilişsel Davranışçı Terapi) CBT; insanların düşünce–duygu–davranış bağlantısını fark edip, zararlı düşünce kalıplarını değiştirmesine yardımcı olan bir terapi yöntemidir. “Olumsuz düşüncelerini tanı, sorgula ve dönüştür.”
-# Trello Hesabımız ;
 
+# Trello Hesabımız ;
 https://trello.com/b/fG3yBMS0/guncel-konular
 
 # Web Sitesi;
 https://psikolog-ayda.github.io/
 
+# Tanıtım Videosu;
+Youtube link: https://www.youtube.com/watch?v=mu1w6on8IfY
 
+# Kurulum
+Projeyi klonladıktan veya indirdikten sonra aşağıdaki komutları terminalde çalıştırarak projeyi başlatabilirsiniz:
+
+```bash
+npm install
+npm run dev
+```
 # SWOT Analizi
-# Strengths
+## Strengths
 
 Ruh sağlığına olan ilgi artıyor
 
@@ -19,19 +28,19 @@ Nora vb. uygulamalarda Türkçe dil desteğinin ve Türk kültürüne uygun yön
 
 Bilişisel Davranışçı Terapi hakkında yardım alabileceğimiz uzmanlarla iletişim
 
-# Weaknesses
+## Weaknesses
 
 Yapay zekâ etik ve gizlilik sorumlulukları
 
 Psikolojik destek içeriğinin doğru çevrilmesi
 
-# Opportunities
+## Opportunities
 
 Türkçe dilde psikoeğitim eksik
 
 Türkiye vatandaşlarının gelenekesel yöntemlerden ziyade profesyonel destek almaya olan ilginin artması
 
-# Threats
+## Threats
 
 Diğer büyük platformlarla rekabet
 
@@ -42,8 +51,8 @@ Sağlık verisi gizliliği konusunda yasal zorluklar
 
 # UML Sınıf Diyagramı
 
-<img width="364" alt="UML Sınıf Diyagramı pngv2" src="https://github.com/user-attachments/assets/701e930d-9c32-4359-908a-781f14a08bd1" />
+<img width="364" alt="UML Sınıf Diyagramı pngv2" src="https://github.com/user-attachments/assets/1aa04610-4123-4a3b-ad71-621bdac0700e" />
 
 # USE CASE Diyagramı
 
-<img width="535" alt="UseCase" src="https://github.com/user-attachments/assets/00b22d45-8217-445b-ba72-226fb6e14d96" />
+<img width="535" alt="UseCase" src="https://github.com/user-attachments/assets/6174066e-6fa2-49f9-bc25-f75487244f4c" />
