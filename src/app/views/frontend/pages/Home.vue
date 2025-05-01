@@ -24,50 +24,50 @@
                </swiper-slide>
          </swiper>
       </section>
-      <section id="aim" class="pt-32 2xl:pb-32 px-8 s:px-16 lg:px-24 4xl:px-32">
-         <di class="flex flex-col items-center gap-2 mb-12 2xl:mb-28">
+      <section id="aim" class="pt-32 xl:pb-32 px-8 s:px-16 lg:px-24 4xl:px-32">
+         <di class="flex flex-col items-center gap-2 mb-12 xl:mb-28">
           <img src="@/assets/img/purpose.jpg" alt="" class="w-40 h-32">
             <h2 class="text-2xl 3xl:text-[1.7rem] 4xl:text-3xl 5xl:text4[2.6rem] text-gray-700 text-center leading-normal tracking-wider font-bold mb-4">
                <span>Hedef ve Amaçlarımız</span>
             </h2>
          </di>
-         <div class="flex flex-col gap-16 2xl:gap-0 2xl:flex-row justify-between">
-            <div class="2xl:w-[calc(50%-1rem)] flex flex-col gap-3 2xl:gap-6 4xl:gap-8">
-                <h3 class="text-[1.5rem] 4xl:text-3xl text-center 2xl:text-start  text-gray-700 font-medium tracking-wider">Önceliğimiz, sizin ruh sağlığınız...</h3>
-                <p class="text-gray-600 text-center 2xl:text-start text-[.97rem] 2xl:text-base 4xl:text-[1.35rem] tracking-wide leading-normal font-normal">Türkiye'de yaşayan insanların daha rahat ve efektif bir şekilde online terapiye ulaşmasını hedefliyoruz. Online platformumuz kullanıcıya Türkiye kültürüne uygun ve vatandaşlar için faydalı olabilecek bir terapi alanı sunmaktadır. Aynı zamanda kullanıcıya online günlük tutma imkanı sunarak da kullanıcıyı rahatlatmayı , bunun yanında online etkili nefes egzersizi yapma imkanı sunarak da kullanıcıyı anında sakinleştirmeyi amaçlıyoruz. Ayda her kullanıcının dilediği yerde dilediği anda ulaşabileceği ve kendi kendine terapi uygulayabileceği bir platform olmayı hedeflemektedir.</p>
+         <div class="flex flex-col gap-16 xl:gap-0 xl:flex-row justify-between">
+            <div class="xl:w-[calc(50%-1rem)] flex flex-col gap-3 xl:gap-6 4xl:gap-8">
+                <h3 class="text-[1.5rem] 4xl:text-3xl text-center xl:text-start  text-gray-700 font-medium tracking-wider">Önceliğimiz, sizin ruh sağlığınız...</h3>
+                <p class="text-gray-600 text-center xl:text-start text-[.97rem] xl:text-base 4xl:text-[1.35rem] tracking-wide leading-normal font-normal">Türkiye'de yaşayan insanların daha rahat ve efektif bir şekilde online terapiye ulaşmasını hedefliyoruz. Online platformumuz kullanıcıya Türkiye kültürüne uygun ve vatandaşlar için faydalı olabilecek bir terapi alanı sunmaktadır. Aynı zamanda kullanıcıya online günlük tutma imkanı sunarak da kullanıcıyı rahatlatmayı , bunun yanında online etkili nefes egzersizi yapma imkanı sunarak da kullanıcıyı anında sakinleştirmeyi amaçlıyoruz. Ayda her kullanıcının dilediği yerde dilediği anda ulaşabileceği ve kendi kendine terapi uygulayabileceği bir platform olmayı hedeflemektedir.</p>
             </div>
-            <div class="2xl:w-[calc(50%-1rem)] md:px-12">
-               <img src="@/assets/img/purpose-big.jpg" class="w-full md:w-2/3 mx-auto 2xl:w-full hidden 2xl:block" alt="">
+            <div class="xl:w-[calc(50%-1rem)] md:px-12">
+               <img src="@/assets/img/purpose-big.jpg" class="w-full md:w-2/3 mx-auto xl:w-full hidden xl:block" alt="">
             </div>
          </div>
       </section>
-      <section id="period" style="background-color:#fff;" class="flex flex-col 2xl:flex-row gap-24 md:gap-32 2xl:gap-0 justify-between py-32 2xl:pe-32">
-         <div class="w-full mx-auto md:w-[calc(65%-1rem)] 2xl:w-[calc(50%-1rem)] 5xl:w-[calc(43%-1rem)] px-12 sm:px-24">
+      <section id="period" style="background-color:#fff;" class="flex flex-col xl:flex-row gap-24 md:gap-32 xl:gap-0 justify-between py-32 xl:pe-32">
+         <div class="w-full mx-auto md:w-[calc(65%-1rem)] xl:w-[calc(50%-1rem)] 5xl:w-[calc(43%-1rem)] px-12 sm:px-24">
             <img class="mx-auto rounded" src="@/assets/img/education5.jpg" alt="">
          </div>
-         <div class="2xl:w-[calc(50%-1rem)] 5xl:w-[calc(57%-1rem)] flex flex-col gap-5 2xl:gap-10 px-6 sm:px-12 s:px-16 lg:px-24 2xl:px-0">
-            <h2 class="text-center 2xl:text-start text-2xl 2xl:text-3xl 5xl:text-[3rem] text-gray-700 leading-normal tracking-wider font-bold">Terapi sürecine yakından göz atın...</h2>
+         <div class="xl:w-[calc(50%-1rem)] 5xl:w-[calc(57%-1rem)] flex flex-col gap-5 xl:gap-10 px-6 sm:px-12 s:px-16 lg:px-24 xl:px-0">
+            <h2 class="text-center xl:text-start text-2xl xl:text-3xl 5xl:text-[3rem] text-gray-700 leading-normal tracking-wider font-bold">Terapi sürecine yakından göz atın...</h2>
             <div class="flex flex-wrap flex-col sm:flex-row gap-6 3xl:gap-8">
                <div class="md:w-[calc(50%-1rem)] flex items-center items-center gap-2">
-                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
+                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-10 s:w-8 md:w-10 lg:w-8 xl:w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
                   <p class="text-gray-600 text-sm 3xl:text-base 5xl:text-2xl tracking-wider leading-normal font-normal">Türkiyedeki insanların online terapiye ulaşmasını kolaylaştırmak.</p>
                </div>
                <div class="md:w-[calc(50%-1rem)] flex items-center gap-2">
-                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
+                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-10 s:w-8 md:w-10 lg:w-8 xl:w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
                   <p class="text-gray-600 text-sm 3xl:text-base 5xl:text-2xl tracking-wider leading-normal font-normal">Türkçe dil desteği gelişmiş ve yapay zeka ile entegre bir terapi alanı.</p>
                </div>
                <div class="md:w-[calc(50%-1rem)] flex items-center gap-2">
-                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
+                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-10 s:w-8 md:w-10 lg:w-8 xl:w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
                   <p class="text-gray-600 text-sm 3xl:text-base 5xl:text-2xl tracking-wider leading-normal font-normal">Online günlük tutma ve geçmiş günlükleri ziyaret etme imkanı.</p>
                </div>
                <div class="md:w-[calc(50%-1rem)] flex items-center gap-2">
-                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
+                  <span class="btn-circle pointer-events-none !mr-4 xl:text-[1.3rem] w-10 s:w-8 md:w-10 lg:w-8 xl:w-12 h-7 text-[calc(1.255rem_+_0.06vw)] inline-flex items-center justify-center leading-none !rounded-[100%]"><span class="icon-check table-cell text-center align-middle font-bold m-[0_auto]"><i class="mdi mdi-check text-sm 5xl:text-xl"></i></span></span>
                   <p class="text-gray-600 text-sm 3xl:text-base 5xl:text-2xl tracking-wider leading-normal font-normal">Online rahatlatıcı nefes egzersizleri ve anında sakinleşme imkanı.</p>
                </div>
             </div>         
             </div>
       </section>
-      <section id="team" class="py-32 px-8 md:px-16 2xl:px-32 3xl:px-48 4xl:px-72 5xl:px-96">
+      <section id="team" class="py-32 px-8 md:px-16 xl:px-32 3xl:px-48 4xl:px-72 5xl:px-96">
          <div class="flex flex-col items-center gap-2 mb-12">
           <img src="@/assets/img/article.jpg" alt="" class="w-40 h-32">
             <h2 class="text-2xl 3xl:text-3xl 5xl:text-[3rem] text-gray-700 text-center leading-normal tracking-wider font-bold mb-4">Ekibimiz</h2>

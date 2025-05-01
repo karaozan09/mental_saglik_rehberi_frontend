@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { appLocalStorage } from '@/app/utils/storage/storage';
+import store from '../store'
+import { computed } from 'vue'
 
 //Frontend
 import FrontLayout from '@/app/views/frontend/layout/FrontLayout.vue'
@@ -6,19 +9,10 @@ import Home from '@/app/views/frontend/pages/Home.vue'
 import FrontLogin from '@/app/views/frontend/pages/Login.vue'
 
 
-import UserLayout from '@/app/views/frontend/pages/user/layout/UserLayout.vue'
+import UserLayout from '@/app/views/frontend/layout/UserLayout.vue'
+import UserIndex from '@/app/views/frontend/pages/user/Index.vue'
+import UserSettings from '@/app/views/frontend/pages/user/Settings.vue'
 
-
-//instructor
-import InstructorDashboard from '@/app/views/frontend/pages/user/instructor/Dashboard.vue'
-
-
-//author
-import AuthorDashboard from '@/app/views/frontend/pages/user/author/Dashboard.vue'
-
-
-//student
-import StudentDashboard from '@/app/views/frontend/pages/user/student/Dashboard.vue'
 
 
 //admin
@@ -52,47 +46,28 @@ const routes = [
         ]
     },
 
-    //instrucotr
     {
-      path:'/instructor',
+      path:'/user',
       component:UserLayout,
-      redirect: '/instructor/dashboard',
+      redirect: '/user/index',
       children:[
         {
-          path:'dashboard',
-          name:'InstructorDashboard',
-          component:InstructorDashboard,
-          meta: { displayName: 'Gösterge Paneli' }
+          path:'index',
+          name:'UserIndex',
+          component:UserIndex,
+          meta: { 
+            displayName: 'Chat Panel',
+            requiresAuth: true
+         }
         },
-      ]
-    },
-
-    //author
-    {
-      path:'/author',
-      component:UserLayout,
-      redirect: '/author/dashboard',
-      children:[
         {
-          path:'dashboard',
-          name:'AuthorDashboard',
-          component:AuthorDashboard,
-          meta: { displayName: 'Gösterge Paneli' }
-        },
-      ]
-    },
-
-     //student
-     {
-      path:'/student',
-      component:UserLayout,
-      redirect: '/student/dashboard',
-      children:[
-        {
-          path:'dashboard',
-          name:'StudentDashboard',
-          component:StudentDashboard,
-          meta: { displayName: 'Gösterge Paneli' }
+          path:'settings',
+          name:'UserSettings',
+          component:UserSettings,
+          meta: { 
+            displayName: 'Ayarlar',
+            requiresAuth: true
+         }
         },
       ]
     },
@@ -137,23 +112,26 @@ const router = createRouter({
         el:to.hash,
         top: 90 
       };
-    } else if (savedPosition) {
-      return savedPosition;
     } else {
       return { top: 0 };
     }
   }
 });
 
-// router.beforeEach((to, from, next) => {
-//   let requiresAuth = to.matched.some((x) => x.meta.requiresAuth);
-//   let isLogin = computed(() =>store.getters.isLogin);
-
-//   if (requiresAuth && !isLogin) {
-//     next({ name: "Login" });
-//   }else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {;
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters['isAuthenticated']) {
+      next();
+    } else {
+      next({ path: '/' });
+    }
+  } else {
+    if(store.getters['isAuthenticated'] && to.name == 'Login'){
+      next({ name: 'UserIndex' });
+    }else{
+      next();
+    } 
+  }
+});
 
 export default router

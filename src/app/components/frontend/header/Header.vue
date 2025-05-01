@@ -3,7 +3,7 @@
         <router-link :to="{name:'Home'}" :class="{ 'text-white' : isHome}" class="logo text-2xl tracking-widest font-medium">
           <img src="@/assets/img/logo2.png" class="w-20 h-20" alt="">
         </router-link>
-        <ul class="nav__menu flex items-center gap-8 5xl:gap-16 3xl:text-[1.15rem] 4xl:text-xl  5xl:text-2xl tracking-wider font-medium text-gray-700 flex" :class="{ '!text-white' : isHome}">
+        <ul class="nav__menu flex items-center gap-8 5xl:gap-16 3xl:text-[1.15rem] 4xl:text-xl  5xl:text-2xl tracking-wider font-medium text-gray-700 flex" :class="{ 'text-white' : isHome}">
           <li class="hover:scale-105 transition duration-200">
             <router-link :to="{ name: 'Home', hash:'#home' }" class="tracking-widest">Anasayfa</router-link>
           </li>
@@ -19,7 +19,10 @@
           <li class="hover:scale-105 transition duration-200">
             <router-link :to="{ name: 'Home', hash:'#contact' }" class="tracking-widest">İletişim</router-link>
           </li>
-          <li class="hover:scale-105 transition duration-200">
+          <li v-if="user" class="hover:scale-105 transition duration-200">
+            <router-link :to="{ name: 'UserIndex' }" class="tracking-widest">Panel</router-link>
+          </li>
+          <li v-if="!user" class="hover:scale-105 transition duration-200">
               <router-link :to="{ name: 'FrontLogin' }" class="py-2 px-7 border border-stone-200 tracking-widest shadow text-[1.2rem] 3xl:text-[1.2rem] !capitalize items-center font-medium !text-green-700 !bg-stone-100 outline-0 rounded">Giriş</router-link>
           </li>
       </ul>
@@ -46,6 +49,7 @@ import { useStore } from 'vuex';
 export default {
   setup() {
     const store = useStore();
+     const user = computed(() => store.state.loginUser)
     const lang = computed(() => store.getters.currentLang);
 
     const route = useRoute();
@@ -80,7 +84,8 @@ export default {
       isHome,
       showMobileMenu,
       lang,
-      changeLanguage
+      changeLanguage,
+      user
     };
   }
 };
@@ -104,9 +109,6 @@ header.sticky .logo{
 header.sticky li
 {
   color: #333;
-}
-header.sticky .router-link-active{
-  color: #3F78E0 !important;
 }
 .sidebar__img-container {
   border: 8px solid #E8E8E8;
@@ -169,7 +171,7 @@ header.sticky .router-link-active{
   }
     
     
-  @media only screen and (max-width:1280px){
+  @media only screen and (max-width:1279px){
       .nav__menu{
           width: 100%;
           position: absolute;

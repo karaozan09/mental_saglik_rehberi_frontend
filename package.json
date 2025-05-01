@@ -19,6 +19,7 @@
     "vee-validate": "^4.12.6",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0",
+    "vue-the-mask": "^0.11.1",
     "vuetify": "^3.6.11",
     "vuex": "^4.0.2",
     "yup": "^1.4.0"
