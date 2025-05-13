@@ -7,15 +7,17 @@
           :headers="headers" 
           :items="users" 
           :isSearch="true" 
-          :imagePropsName ="'img'"
-          :updateViewName="null"
+          :isBtnUpdate="true"
           :isBtnUpdateModal="true"
+          :imagePropsName ="'img'"
           :updateModalElementData="modalElementData"
           :updateModalData="user"
           :isBtnDelete="true"
           :dialogs="dialogs"
           :loading="loading"
+          @update="handleUpdateSubmit" 
           @delete="handleDeleteSubmit" 
+          @editItem="editItem"
         />
       </v-main>
     </v-app>
@@ -45,9 +47,19 @@
         }
       }));
       const user = reactive({})
+      const dialogs = reactive({})
 
       const handleDeleteSubmit= async (usersId) => {
        await store.dispatch('admin_users_users/delete',usersId);
+      }
+
+      const modalElementData = []
+      const handleUpdateSubmit= async (usersId) => {
+       
+      }
+
+      const editItem= async (usersId) => {
+       
       }
 
       const headers = [
@@ -65,10 +77,14 @@
 
       return {
         loading,
+        dialogs,
         users,
         user,
         headers,
+        editItem,
         handleDeleteSubmit,
+        handleUpdateSubmit,
+        modalElementData
       };
     }
   };
