@@ -50,7 +50,7 @@ export default createStore({
               commit('setToken', token);
               commit('setloginUser', loginUser);
               appSessionStorage.setItem('token',token);
-              return true
+              return response.data.role
           }else{
               return false
           }

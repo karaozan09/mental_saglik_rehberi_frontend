@@ -1,46 +1,53 @@
 <template>
     <div class="flex flex-wrap gap-10 text-gray-700 m-2">
-        <div class="w-full sm:w-[calc(50%-1.4rem)] lg:w-[calc(33%-2rem)] 3xl:w-[calc(25%-2rem)] position-relative">
-          <router-link :to="{name:'UserStudents'}" class="card-dashboard tracking-wider 3xl:text-lg min-h-48 flex flex-col gap-4 justify-center items-center rounded">
-            <h2 class="font-bold text-center">Toplam Faaliyet<br>Sayısı</h2>
-            <span class="font-medium">9</span>
-          </router-link>
-          <div class="card-dashboard-top-shape bg-blue-500"></div>
-          <div class="card-dashboard-bottom-shape bg-blue-500"></div>
+        <div class="shadow w-full sm:w-[calc(50%-1rem)] md:w-[calc(33%-1rem)] lg:w-[calc(25%-1rem)] 3xl:w-[calc(20%-1rem)] 4xl:w-[calc(16.6%-1rem)] h-44 pt-8 p-4 rounded border border-green-200 relative bg-green-100 hover:scale-105 transition duration-300">
+            <div class="dashboard-icon-container shadow-lg bg-green-100 border border-green-200">
+                <i class="mdi mdi-account-multiple text-3xl "/>
+            </div>
+            <h1 class="font-bold tracking-wider text-base text-center">Toplam Kullanıcı<br> Sayısı</h1>
+            <p class="text-center font-medium tracking-wider mt-4">{{statistics.user_count}}</p>
         </div>
-        <div class="w-full sm:w-[calc(50%-1.4rem)] lg:w-[calc(33%-2rem)] 3xl:w-[calc(25%-2rem)] position-relative">
-          <router-link :to="{name:'UserDonors'}" class="card-dashboard tracking-wider 3xl:text-lg min-h-48 flex flex-col gap-4 justify-center items-center rounded">
-            <h2 class="font-bold text-center">Toplam Bağışçı<br>Sayısı</h2>
-            <span class="font-medium">300</span>
-          </router-link>
-          <div class="card-dashboard-top-shape bg-red-500"></div>
-          <div class="card-dashboard-bottom-shape bg-red-500"></div>
+        <div class="shadow w-full sm:w-[calc(50%-1rem)] md:w-[calc(33%-1rem)] lg:w-[calc(25%-1rem)] 3xl:w-[calc(20%-1rem)] 4xl:w-[calc(16.6%-1rem)] h-44 pt-8 p-4 rounded border border-yellow-200 relative bg-yellow-100 hover:scale-105 transition duration-300">
+            <div class="dashboard-icon-container shadow-lg bg-yellow-100 border border-yellow-200">
+                <i class="mdi mdi-account-tie text-3xl "/>
+            </div>
+            <h1 class="font-bold tracking-wider text-base text-center">Toplam Personel <br>Sayısı</h1>
+            <p class="text-center font-medium tracking-wider mt-4">{{statistics.staff_count}}</p>
         </div>
-        <div class="w-full sm:w-[calc(50%-1.4rem)] lg:w-[calc(33%-2rem)] 3xl:w-[calc(25%-2rem)] position-relative">
-          <router-link :to="{name:'UserStudents'}" class="card-dashboard tracking-wider 3xl:text-lg min-h-48 flex flex-col gap-4 justify-center items-center rounded">
-            <h2 class="font-bold text-center">Toplam Öğrenci<br>Sayısı</h2>
-            <span class="font-medium">1200</span>
-          </router-link>
-          <div class="card-dashboard-top-shape bg-orange-400"></div>
-          <div class="card-dashboard-bottom-shape bg-orange-400"></div>
-        </div>
-        <div class="w-full sm:w-[calc(50%-1.4rem)] lg:w-[calc(33%-2rem)] 3xl:w-[calc(25%-2rem)] position-relative">
-          <router-link :to="{name:'AdminMessages'}" class="card-dashboard tracking-wider 3xl:text-lg min-h-48 flex flex-col gap-4 justify-center items-center rounded">
-            <h2 class="font-bold text-center">Mesajlar</h2>
-            <span class="font-medium">3</span>
-          </router-link>
-          <div class="card-dashboard-top-shape bg-green-500"></div>
-          <div class="card-dashboard-bottom-shape bg-green-500"></div>
-        </div>  
     </div>
 </template>
 
 <script>
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex'
 export default {
+  setup(){
+      const store = useStore();
+      const statistics = computed(() => store.state.admin_dashboard_dashboard.statistics);
 
+      onMounted(async() => {
+        await store.dispatch('admin_dashboard_dashboard/getStatistics');
+      })
+    return{
+      statistics
+    }
+  }
 }
 </script>
 
 <style scoped>
+.dashboard-icon-container{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -1.7rem;
+    left: 50%;
+    transform: translateX(-50%);
 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
 
-  <footer id="contact" class="footer font-bold text-gray-50 mt-24 text-white px-12 py-8 relative tracking-wider sahdow">
+  <footer class="footer font-bold text-gray-50 mt-24 text-white px-12 py-8 relative tracking-wider sahdow">
    <svg 
       viewBox="0 0 2 1" 
       preserveAspectRatio="none">
@@ -18,69 +18,67 @@
         <use href="#w" y=".3" fill="#8580F0" />
         </g>
     </svg>
-    <div class="flex flex-wrap justify-center gap-14">
-        <div class="w-full  lg:w-[calc(30%-4rem)] flex items-center 2xl:items-start flex-col ">
-            <h2 class="text-xl 3xl:text-2xl 4xl:text-3xl tracking-wider">İletişim Bilgileri</h2>
-            <div class="flex flex-col items-center lg:items-start gap-1 font-normal mt-2">
-              <div>
-                <span class="w-24 font-bold">Email</span>:
-                <span>mtlcnclk98@gmail.com</span>
-              </div>
-              <div>
-                <span class="w-24 font-bold">Email</span>:
-                <span>karaozanb@gmail.com</span>
-              </div>
-              <div class="text-center lg:text-start">
-                <span class="w-24 font-bold">Adres</span>:
-                <span class="text-center">Burj Khalifa / Kat:82 / No:8029 / Dubai Center</span>
-              </div>
-            </div>
+     <div class="flex flex-wrap justify-between gap-20 2xl:gap-5">
+        <div class="w-full md:w-[calc(50%-4rem)] 2xl:w-[calc(37%-1rem)] flex items-center 2xl:items-start flex-col">
+            <h2 class="text-2xl md:text-3xl 4xl:text-4xl text-center md:text-start tracking-wider">{{settings.footer_top_title}}</h2>
+            <p class="footer-ck-content font-normal text-center md:text-start text-[0.95rem] md:text-base 3xl:text-lg 4xl:text-2xl tracking-wide" v-html="settings.footer_top_text"></p>
         </div>
-        <div class="w-full  lg:w-[calc(30%-4rem)] flex items-center 2xl:items-center flex-col gap-3">
-            <h2 class="text-xl 3xl:text-2xl 4xl:text-3xl tracking-wider">Proje Linkleri</h2>
-            <div class="flex flex-col gap-1 font-normal mt-2">
-              <div>
-                <span class="w-24 font-bold">Github</span>:
-                <a href="https://github.com/karaozan09/mental_saglik_rehberi_frontend" class="underline" target="_blank">Github adresimiz</a>
-              </div>
-              <div>
-                <span class="w-24 font-bold">Trello</span>:
-                <a href="https://trello.com/b/fG3yBMS0/guncel-konular" class="underline" target="_blank">Trello adresimiz</a>
-              </div>
-            </div>
+        <div class="w-full md:w-[calc(50%-4rem)] 2xl:w-[calc(20%-1rem)] flex items-center 2xl:items-center flex-col gap-3">
+            <h2 class="text-xl 3xl:text-2xl 4xl:text-3xl text-center lg:text-start tracking-wider">Destekler</h2>
+            <ul class="flex flex-col gap-3 font-normal text-sm 3xl:text-lg 4xl:text-2xl">
+                <li class="tracking-wider transition duration-300 hover:scale-105">
+                    <a href="https://www.firat.edu.tr/tr" target="_blank">Fırat Üniversitesi</a>
+                </li>
+                <li class="tracking-wider transition duration-300 hover:scale-105">
+                     <a href="https://www.firatteknokent.com.tr/" target="_blank">Fırat Teknokent</a>
+                </li>
+            </ul>
         </div>
-        <div class="w-full  mb-3 lg:w-[calc(30%-4rem)] flex items-center items-center flex-col items-end gap-1 3xl:gap-3">
+        <div class="w-full md:w-[calc(50%-4rem)] 2xl:w-[calc(20%-1rem)] flex items-center 2xl:items-center flex-col gap-3">
+            <h2 class="text-xl 3xl:text-2xl 4xl:text-3xl tracking-wider">Danışmanlar</h2>
+            <ul class="flex flex-col font-normal gap-3 text-sm 3xl:text-lg 4xl:text-2xl">
+                <li class="tracking-wider transition duration-300 hover:scale-105">
+                     <a href="https://abs.firat.edu.tr/tr/ozkaynak" target="_blank">Fatih ÖZKAYNAK</a>
+                </li>
+            </ul>
+        </div>
+        <div class="w-full md:w-[calc(50%-4rem)] 2xl:w-[calc(23%-1rem)] flex items-center 2xl:items-center flex-col gap-1 3xl:gap-3">
             <h2 class="text-xl 3xl:text-2xl 4xl:text-3xl tracking-wider">Sosyal Medya</h2>
              <div class="flex flex-wrap justify-center gap-4 mt-4">
-                <a class="flex justify-center items-center social-link w-10 h-10 rounded-full transition duration-300 hover:scale-110" href="#">
-                    <i class="mdi mdi-instagram text-xl"></i>
-                </a>
-                 <a class="flex justify-center items-center social-link w-10 h-10 rounded-full transition duration-300 hover:scale-110" href="#">
-                    <i class="mdi mdi-linkedin text-xl"></i>
-                </a>
-                <a class="flex justify-center items-center social-link w-10 h-10 rounded-full transition duration-300 hover:scale-110" href="#">
-                    <i class="mdi mdi-youtube text-xl"></i>
-                </a>
-                <a class="flex justify-center items-center social-link w-10 h-10 rounded-full transition duration-300 hover:scale-110" href="#">
-                    <i class="mdi mdi-twitter text-xl"></i>
-                </a>
-                <a class="flex justify-center items-center social-link w-10 h-10 rounded-full transition duration-300 hover:scale-110" href="#">
-                    <i class="mdi mdi-facebook text-xl"></i>
-                </a>
-               
+                <div v-for="(socialMedia,index) in socialMedias" :key="index">
+                    <SocialMediaCard :data="socialMedia"/>
+                </div> 
             </div>
         </div>
     </div>
-    <hr class="my-4">
-    <p class="text-lg 4xl:text-xl tracking-widest font-medium text-center">
-        Copyright Ⓒ 2025 Ayda. Tüm hakları saklıdır.
-    </p>
+    <hr class="my-10">
+    <p class="footer-bottom-text flex justify-center 3xl:text-lg text-white 4xl:text-2xl tracking-wider text-center font-semibold lg:text-start" v-html="settings.footer_bottom_text"></p>
   </footer>
 </template>
 
 <script>
+import SocialMediaCard from '@/app/components/frontend/cards/SocialMediaCard.vue';
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 export default {
+  components:{
+    SocialMediaCard
+  },
+  setup(){
+    const store = useStore();
+    const settings = computed(() => store.state.home_home.settings);
+    const socialMedias = computed(() => store.state.home_home.social_media);
 
+    onMounted(async() => {
+       await store.dispatch('home_home/getSettings');
+       await store.dispatch('home_home/getSocialMedia');
+    })
+
+    return{
+      settings,
+      socialMedias
+    }
+  }
 }
 </script>
 
@@ -196,5 +194,24 @@ svg {
   100% {
     background-position-x: 0px;
   }
+}
+
+.social-link{
+    border-width: 1px;
+}
+.footer-ck-content p span,
+.footer-bottom-text p span {
+    color: #fff !important;
+}
+.footer-bottom-text p a span{
+    text-decoration: underline !important;
+    color: rgb(196, 196, 246) !important;
+}
+
+
+@media only screen and (min-width:1441px){
+    .social-link{
+        border-width: 2px;
+    }
 }
 </style>

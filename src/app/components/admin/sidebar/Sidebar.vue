@@ -2,19 +2,31 @@
   <aside class="admin-sidebar open">
         <ul class="tracking-wider text-white text-sm 3xl:text-[0.9rem] 5xl:text-xl font-medium">
             <li :class="{'bg-[#F3F6FB] text-black border-r border-solid' : route.path.includes('dashboard')}">
-                <router-link :to="{name:''}" class="flex items-center drop-shadow-md text-nowrap">
+                <router-link :to="{name:'AdminDashboard'}" class="flex items-center drop-shadow-md text-nowrap">
                     <span class="w-10 shrink-0"><i class="mdi mdi-gauge text-[1.25rem] 3xl:text-xl"/></span>
                     <span>Gösterge Paneli</span>
                 </router-link>
             </li>
-            <li :class="{'bg-[#F3F6FB] text-black border-r border-solid' : route.path.includes('messages')}">
-                <router-link :to="{name:''}" class="flex items-center drop-shadow-md text-nowrap">
-                    <span class="w-10 shrink-0"><i class="mdi mdi-email text-[1.25rem] 3xl:text-xl"/></span>
-                    <span>Mesajlar</span>
+            <li :class="{'bg-[#F3F6FB] text-black border-r border-solid' : route.path.includes('users')}">
+                <router-link :to="{name:'AdminUsers'}" class="flex items-center drop-shadow-md text-nowrap">
+                    <span class="w-10 shrink-0"><i class="mdi mdi-account-multiple text-[1.25rem] 3xl:text-xl"/></span>
+                    <span>Kullanıcılar</span>
+                </router-link>
+            </li>
+            <li :class="{'bg-[#F3F6FB] text-black border-r border-solid' : route.path.includes('teams')}">
+                <router-link :to="{name:'AdminTeams'}" class="flex items-center drop-shadow-md text-nowrap">
+                    <span class="w-10 shrink-0"><i class="mdi mdi-account-group text-[1.25rem] 3xl:text-xl"/></span>
+                    <span>Personeller</span>
+                </router-link>
+            </li>
+            <li :class="{'bg-[#F3F6FB] text-black border-r border-solid' : route.path.includes('social-media')}">
+                <router-link :to="{name:'AdminSocialMedia'}" class="flex items-center drop-shadow-md text-nowrap">
+                    <span class="w-10 shrink-0"><i class="mdi mdi-share-variant text-[1.25rem] 3xl:text-xl"/></span>
+                    <span>Sosyal Medya</span>
                 </router-link>
             </li>
             <li :class="{'bg-[#F3F6FB] text-black border-r border-solid' : route.path.includes('settings')}">
-                <router-link :to="{name:''}" class="flex items-center drop-shadow-md text-nowrap">
+                <router-link :to="{name:'AdminSettings'}" class="flex items-center drop-shadow-md text-nowrap">
                     <span class="w-10 shrink-0"><i class="mdi mdi-cog text-[1.25rem] 3xl:text-xl"></i></span>
                     <span>Ayarlar</span>
                 </router-link>
@@ -32,10 +44,12 @@
 <script>
 import { onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router'
+import { useStore } from 'vuex';
 export default {
     setup(){
         const router = useRouter();
         const route = useRoute();
+        const store = useStore();
 
         onMounted(() => {
             const blackScreen = document.querySelector('.admin-black-screen');
@@ -74,7 +88,8 @@ export default {
         })
 
         function logout(){
-            router.push({name:'AdminLogin'})
+            store.dispatch('logout');
+            router.push({ name: 'Home' });
         }
 
         function subMenuToggle(e){
@@ -98,7 +113,7 @@ export default {
 
 <style scoped>
    .admin-sidebar{
-        background-color: #6E0840;
+        background-color: #9158C8;
         transition: all .3s ease;
         overflow: hidden;
         padding: 2rem 0;

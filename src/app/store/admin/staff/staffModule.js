@@ -1,0 +1,162 @@
+import  httpBase from "@/app/utils/http/http.js"
+import Swal from 'sweetalert2'
+import { formatChange } from "@/app/utils/format-change/format-change"
+
+const staffModule = {
+    namespaced:true,
+    state: {
+        staff:[]
+    },
+    mutations: {
+        setStaff(state,staff){
+            staff.forEach(user => {
+                user.img = formatChange.formatUrl(user.img)
+            })
+            state.staff = staff
+        },
+        deleteStaff(state,id){
+            state.staff = state.staff.filter( s => s.id != id)
+        },
+    },
+    actions: {
+        async getAll({ commit }){
+            const response = await httpBase.get('api/staff/get-all');
+            
+            commit('setStaff',response.data.staff)
+        },
+        async getByDetail({commit},staffId){
+            try{
+                const response = await httpBase.get(`api/staff/get`,{
+                    params:{
+                        id:staffId
+                    }
+                })
+                const staff = response.data.staff
+                return staff;
+            }catch(error){
+                console.error('Error changing user status:', error);
+            }
+        },
+        async create({dispatch},formData) {
+            try{
+                const response = await httpBase.post("api/staff/create",formData,{
+                    'Content-Type': 'multipart/form-data'
+                });
+                if (response.status === 201) {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Başarılı",
+                        text:"Personel başarıyla eklendi.",
+                        showConfirmButton: false,
+                        timer: 2000
+                      });
+                    dispatch('getAll');
+                }
+
+                
+            }catch(error){
+                const errors = error.response.data.errors;
+                let errorMessage ="";
+
+                for (const key in errors) {
+                    errorMessage += `<div class='fw-semibold'>${errors[key]}</div>`;
+                  }
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Hata",
+                    html:errorMessage,
+                    confirmButtonText: "Tamam",
+                });
+            }
+        },
+        async update({dispatch},formData) {
+            try{
+                const response = await httpBase.post("api/staff/update",formData,{
+                    'Content-Type': 'multipart/form-data'
+                });
+                if (response.status === 200) {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Başarılı",
+                        text:"Personel başarıyla güncellendi.",
+                        showConfirmButton: false,
+                        timer: 2000
+                      });
+                    dispatch('getAll');
+                }
+
+                
+            }catch(error){
+                const errors = error.response.data.errors;
+                let errorMessage ="";
+
+                for (const key in errors) {
+                    errorMessage += `<div class='fw-semibold'>${errors[key]}</div>`;
+                  }
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Hata",
+                    html:errorMessage,
+                    confirmButtonText: "Tamam",
+                });
+            }
+        },
+        async delete({ commit }, staffId) {
+            try {
+                // Kullanıcıdan onay iste
+                const result = await Swal.fire({
+                    title: 'Personeli silmek istediğinize emin misiniz?',
+                    text: "Bu işlemi geri alamazsınız!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Sil',
+                    cancelButtonText: 'İptal et'
+                });
+        
+
+                if (result.isConfirmed) {
+                    const response = await httpBase.post("api/staff/delete", {
+                        id: staffId
+                    });
+                    if (response.status === 200) {
+                        Swal.fire({
+                            position: "center",
+                            icon: "success",
+                            title: "Başarılı",
+                            text: "Personel başarıyla silindi.",
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                        commit('deleteStaff',staffId);
+                    }
+                }
+                
+            } catch (error) {
+                const errors = error.response?.data?.errors || {};
+                let errorMessage = "";
+        
+                for (const key in errors) {
+                    errorMessage += `<div class='fw-semibold'>${errors[key]}</div>`;
+                }
+                Swal.fire({
+                    position: "center",
+                    icon: "error",
+                    title: "Hata",
+                    html: errorMessage,
+                    confirmButtonText: "Tamam",
+                });
+            }
+        },
+    },
+    getters: {
+        
+    }
+}
+
+export default staffModule

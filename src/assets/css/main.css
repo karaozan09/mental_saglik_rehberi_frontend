@@ -49,3 +49,197 @@ input[type='file']::file-selector-button {
         transform: translateY(0);
     }
 }
+
+.text-shadow{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .4), 
+           2px 2px 4px rgba(0, 0, 0, .1);
+}
+
+.v-application__wrap{
+    min-height: auto !important;
+}
+
+/*Ck editör*/
+
+/*Ck editör özellikleri mobilde sığmayanları ikinci satırdan başlatmak için gerekli*/
+.ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items{
+    flex-flow: row wrap!important;
+}
+
+/*Ck editör özellikleri mobilde sığmayanları ikinci satırdan başlatmak için gerekli*/
+.ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items{
+    flex-flow: row wrap!important;
+}
+.ck.ck-editor__main .ck-content ul{
+    list-style: disc !important ;
+    padding-left: 3rem;
+}
+.ck.ck-editor__main .ck-content ol{
+    list-style: decimal !important ;
+    padding-left: 3rem;
+}
+.ck.ck-editor__main .ck-content a{
+    text-decoration: underline;
+    color: blue;
+}
+
+.card-dashboard-top-shape{
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    left: -.3rem;
+    top: -.3rem;
+    z-index: 1;
+    border-radius: 3px;
+    border-top-left-radius: 6px;
+    transition: all .4s;
+}
+.card-dashboard-bottom-shape{
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    right: -.3rem;
+    bottom: -.3rem;
+    z-index: 1;
+    border-radius: 3px;
+    border-bottom-right-radius: 6px;
+    transition: all .4s;
+}
+.card-dashboard{
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    border: 1px solid #ddd;
+}
+@media only screen and (min-width:768px){
+    .card-dashboard:hover ~ .card-dashboard-top-shape{
+        transform: translate(calc(100% + .7rem));
+        border-top-right-radius: 6px;
+        border-top-left-radius: 3px;
+    }
+    .card-dashboard:hover ~ .card-dashboard-bottom-shape{
+        transform: translate(calc(-100% - .7rem));
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 3px;
+    }
+}
+
+
+input[type='file']::file-selector-button {
+    background-color: rgb(2 132 199);
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/*modal*/
+.v-card-title{
+    font-size: 1.8rem !important;
+}
+
+.v-application__wrap{
+    min-height: auto !important;
+}
+
+/* ckediotr yükseklik */
+.ck-editor__editable {
+    min-height: 250px;
+    width: 100% !important;
+    word-break: break-all;
+}
+
+
+/*TABLO CSSLER*/
+.v-data-table-header__content{
+    font-size: .85rem !important;
+}
+table{
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid #dddddd;
+}
+th{
+    background-color: #7b8aa0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+td{
+    font-size: .75rem;
+}
+.search-container .v-field__field input{
+    padding: .8rem .5rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile .flex-item-inner{
+        margin-top: .8rem;
+    }
+.v-data-table-footer{
+    justify-content: center !important;
+    gap: 15px;
+}
+
+.flex-content {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flex-item {
+    padding: 5px;
+    width: 50%;
+    height: max-content;
+    font-weight: bold;
+}
+
+.mobile table tr ul{
+    padding: 1.5rem;
+}
+.mobile table tr {
+    border: 1px solid #ddd;
+    border-top: 1px solid transparent;
+}
+.mobile table tr:nth-child(1){
+    border-top: 1px solid #ddd;
+}
+.mobile table tr:nth-child(odd) {
+    border-left: 6px solid #c77dff !important;
+}
+
+.mobile table tr:nth-child(even) {
+    border-left: 6px solid #fff1bf !important;
+}
+
+.mobile .flex-item:before {
+    content: attr(data-label);
+    padding-right: .5em;
+    text-align: left;
+    display: block;
+    color: #999;
+    margin-bottom: .3rem;
+
+}
+
+}
+
+@media only screen and (max-width:374px){
+    .mobile .flex-item::before{
+        text-align: center;
+    }
+    .mobile .flex-item {
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .mobile .flex-item-inner{
+        justify-content: center;
+    }
+}

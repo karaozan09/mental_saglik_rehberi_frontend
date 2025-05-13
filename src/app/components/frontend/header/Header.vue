@@ -1,7 +1,7 @@
 <template>
     <header class="flex justify-between items-center  px-6 md:px-12 2xl:px-20 3xl:px-28 py-6 w-full shadow bg-white small-screen" :class="{ 'shadow-none absolute z-10 bg-transparent' : isHome}">
         <router-link :to="{name:'Home'}" :class="{ 'text-white' : isHome}" class="logo text-2xl tracking-widest font-medium">
-          <img src="@/assets/img/logo2.png" class="w-20 h-20" alt="">
+          <img :src="logo" class="w-20 h-20" alt="">
         </router-link>
         <ul class="nav__menu flex items-center gap-8 5xl:gap-16 3xl:text-[1.15rem] 4xl:text-xl  5xl:text-2xl tracking-wider font-medium text-gray-700 flex" :class="{ 'text-white' : isHome}">
           <li class="hover:scale-105 transition duration-200">
@@ -49,8 +49,8 @@ import { useStore } from 'vuex';
 export default {
   setup() {
     const store = useStore();
-     const user = computed(() => store.state.loginUser)
-    const lang = computed(() => store.getters.currentLang);
+    const user = computed(() => store.state.loginUser)
+    const logo = computed(() => store.state.home_home.logo);
 
     const route = useRoute();
     let isHome = computed(() => route.name == 'Home');
@@ -62,9 +62,6 @@ export default {
         blackScreen.classList.toggle('hidden');
     }
 
-    const changeLanguage = (lang) => {
-      store.dispatch('changeLang', lang);
-    };
 
     document.addEventListener('click',function(e){
       const menu = document.querySelector('.nav__menu');
@@ -79,12 +76,15 @@ export default {
       }
     })
 
+    onMounted(async() => {
+      await store.dispatch('home_home/getLogo');
+    })
+
     return {
+      logo,
       route,
       isHome,
       showMobileMenu,
-      lang,
-      changeLanguage,
       user
     };
   }

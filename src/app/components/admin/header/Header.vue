@@ -1,9 +1,9 @@
 <template>
   <header class="flex items-center h-[6.5rem] 3xl:h-[6.5rem] 4xl:h-[8rem] 5xl:h-[9rem] gap-6 lg:gap-[4.5rem] px-6 lg:px-12 bg-white shadow text-gray-700 tracking-wider position-relative z-10">
       <router-link :to="{name:'AdminDashboard'}">
-        <img class="w-40 4xl:w-48" src="@/assets/img/article.jpg" alt="">
+        <img class="w-16" :src="logo" alt="">
       </router-link>
-      <div class="flex-1 flex justify-between items-center">
+      <div class="flex-1 flex justify-between items-center ms-32">
         <div class="flex items-center gap-5">
            <i id="menu_icon" @click="adminSidebarShow" class="mdi mdi-menu text-gray-700 text-3xl cursor-pointer hidden xl:block"/>
            <span class="font-medium text-xl md:text-xl 5xl:text-3xl text-center tracking-wider hidden sm:block">{{routeName}}</span>
@@ -51,7 +51,7 @@
               <i class="mdi mdi-chevron-down text-3xl"></i>
               <ul class="process-list">
                 <li>
-                  <router-link :to="{name:'Settings'}" class="block w-full h-full">
+                  <router-link :to="{name:'AdminDashboard'}" class="block w-full h-full">
                       <i class="mdi mdi-cog text-lg  me-1"></i> Ayarlar
                   </router-link>
                   
@@ -79,14 +79,18 @@
 <script>
 import { computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 export default {
 
   setup(){
     const router = useRouter()
     const route = useRoute();
     const routeName = computed(() => route.meta.displayName);
+    const store = useStore();
+    const logo = computed(() => store.state.admin_settings_settings.logo);
 
-    onMounted(() => {
+    onMounted(async() => {
+        await store.dispatch('admin_settings_settings/getLogo');
         const processList = document.querySelector('.process-list')
         const sidebar = document.querySelector('.admin-sidebar');
         const burgerInput = document.querySelector('#btn_burger input')
@@ -137,6 +141,7 @@ export default {
       router.push({name:'AdminLogin'})
     }
     return{
+      logo,
       processListShow,
       adminSidebarShow,
       logout,

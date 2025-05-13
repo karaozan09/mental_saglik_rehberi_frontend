@@ -18,7 +18,11 @@ import UserSettings from '@/app/views/frontend/pages/user/Settings.vue'
 //admin
 import AdminLogin from  '@/app/views/admin/pages/Login.vue';
 import AdminLayout from '@/app/views/admin/layout/AdminLayout.vue';
-import Dashboard from '@/app/views/admin/pages/Dashboard.vue';
+import AdminDashboard from '@/app/views/admin/pages/Dashboard.vue';
+import AdminTeams from '@/app/views/admin/pages/Teams.vue';
+import AdminUsers from '@/app/views/admin/pages/Users.vue';
+import AdminSocialMedia from '@/app/views/admin/pages/SocialMedia.vue';
+import AdminSettings from '@/app/views/admin/pages/Settings.vue';
 
 
 import Notfound from '@/app/views/error/Notfound.vue'
@@ -88,9 +92,44 @@ const routes = [
       children:[
         {
           path:'dashboard',
-          name:'Dashboard',
-          component:Dashboard,
-          meta: { displayName: 'Gösterge Paneli' }
+          name:'AdminDashboard',
+          component:AdminDashboard,
+          meta: { 
+            displayName: 'Gösterge Paneli',
+            requiresAuth: true 
+           }
+        },
+        {
+          path:'teams',
+          name:'AdminTeams',
+          component:AdminTeams,
+          meta: { 
+            requiresAuth: true 
+           }
+        },
+        {
+          path:'users',
+          name:'AdminUsers',
+          component:AdminUsers,
+          meta: { 
+            requiresAuth: true 
+           }
+        },
+        {
+          path:'social-media',
+          name:'AdminSocialMedia',
+          component:AdminSocialMedia,
+          meta: { 
+            requiresAuth: true 
+           }
+        },
+        {
+          path:'settings',
+          name:'AdminSettings',
+          component:AdminSettings,
+          meta: { 
+            requiresAuth: true 
+           }
         },
       ]
     },
